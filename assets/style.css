@@ -1,21 +1,4 @@
 * {
-    text-align: center;
     background-color: #FFFFEE;
     color: #eb6424 ;
-    padding: 15px 10px;
 }
-
-nav ul {
-    display: flex;
-    justify-content: flex-end;
-}
-
-footer {
-    border-top: solid 2px #79C230;
-    text-align: center;
-  }
-
-  .logo {
-    height: 400px;
-    width: 400px;
-  }
