@@ -10,22 +10,26 @@
     <link rel="icon" href="./assets/images/Lettuce-Favicon.png">
 </head>
 <body>
-    <header>
-        <nav class="level">
-            <img class="logo" id="logo" src="./assets/images/Lettuce-Talk-Logo.png" alt="Lettuce Talk pun">
-            <ul class="level-item has-text-centered">
-                <li class="column">
-                    <button class="button is-success food-log is-lowercase has-text-centered" id="food-log" style="color: #79C230; background-color: #ffffee; text-decoration: underline;">Food Log</button>
-                </li>
-                <li class="column">
-                    <button class="button is-success location is-lowercase has-text-centered" id="location" style="color: #79C230; background-color: #ffffee; text-decoration: underline;">I'm Craving...</button>
-                </li>
-                <li class="column">
-                    <button class="button is-success home is-lowercase has-text-centered" id="home" style="color: #79C230; background-color: #ffffee; text-decoration: underline;">Home</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar has-shadow">
+        <!--Logo-->
+        <div class="navbar-brand">
+            <a class="navbar-item" href="./index.html">
+                <img src="./assets/images/LettuceTalk.png" id="logo" style="max-height: 250px" class="py-2 px-2" alt="Lettuce Talk pun">
+            </a>
+
+        </div>
+
+        <div class="navbar-menu is-centered" id="navbar-links">
+            <div class="navbar-end my-6 py-6">
+                <a class=" button is-ghost food-log is-lowercase has-text-centered" id="food-log" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href="./foodlog.html">Food Log</a>
+                <a class=" button is-ghost location is-lowercase has-text-centered" id="location" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href= "./location.html">Im Craving...</a>
+                
+            </div>
+
+        </div>
+
+    
+    </nav>
     <main>
         
     </main>
