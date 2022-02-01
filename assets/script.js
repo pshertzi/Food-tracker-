@@ -11,7 +11,7 @@ var btnClose =
 var displayIngredient = function (meals, modal) {
     var strFoodDetails = "";
 
-    modal.html('<h1>Ingredients</h1>');
+    modal.html('<h1 style="color: #79C230">Ingredients</h1>');
     if (meals.strIngredient1) {
         strFoodDetails = '<li>' + meals.strIngredient1 + '</li>'
     }
@@ -88,7 +88,7 @@ var displayRandomFood = function (data) {
         description.html('<img  src=' + data.meals[i].strMealThumb + '>' + '<h4 class="mt-5">' + data.meals[i].strMeal + '</h4>');
 
         displayIngredient(data.meals[i], modalInstructions);
-        modalInstructions.append('<h1>Recipe Instructions</h1>');
+        modalInstructions.append('<h1 style="color: #79C230" >Recipe Instructions</h1>');
         modalInstructions.append(data.meals[i].strInstructions);
 
     }
