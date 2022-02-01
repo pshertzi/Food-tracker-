@@ -8,10 +8,13 @@ var close =
 var btnClose =
     document.querySelector('#btn-close')
 
+//add data into details modal
 var displayIngredient = function (meals, modal) {
     var strFoodDetails = "";
 
     modal.html('<h1 style="color: #79C230">Ingredients</h1>');
+    
+    //validation append only the data and prevent append empty list
     if (meals.strIngredient1) {
         strFoodDetails = '<li>' + meals.strIngredient1 + '</li>'
     }
@@ -85,8 +88,10 @@ var displayRandomFood = function (data) {
     var modalInstructions = $('.content');
 
     for (var i = 0; i < data.meals.length; i++) {
+        //display in index the data into the card
         description.html('<img  src=' + data.meals[i].strMealThumb + '>' + '<h4 class="mt-5">' + data.meals[i].strMeal + '</h4>');
 
+        //append data into the details modal
         displayIngredient(data.meals[i], modalInstructions);
         modalInstructions.append('<h1 style="color: #79C230" >Recipe Instructions</h1>');
         modalInstructions.append(data.meals[i].strInstructions);
