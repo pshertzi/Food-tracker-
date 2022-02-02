@@ -31,6 +31,39 @@ var modalTable = document.querySelector('#modal-table');
 // table
 var containerTable = document.querySelector('.container-table');
 
+//safe data into localstorage
+var saveLocalStorage = function (foods) {
+
+    //var oldtimes to read the previous
+    var oldItems = JSON.parse(localStorage.getItem("foodLogFile"));
+    if (oldItems) {
+        // with the old record need now append the new record
+        oldItems.push(foods);
+        localStorage.setItem("foodLogFile", JSON.stringify(oldItems));
+        foodLogFile = oldItems;
+
+    } else {
+        //if not old data save the current score to localstorage
+        foodLogFile.push(foods)
+        localStorage.setItem("foodLogFile", JSON.stringify(foodLogFile));
+    }
+}
+
+//clean table inside modal screen and array temporal search
+var cleanTableModal = function () {
+    //$('#modal-line').remove();
+    var linesTr = $('#modal-line > tr ');
+    if (linesTr.length > 0) {
+        console.log(linesTr);
+        linesTr.remove();
+
+
+    }
+    if (apiList.length > 0) {
+        apiList = [];
+    }
+}
+
 //fill with the data the table with all list of foods
 var fillModalTable = function (foods) {
     modalTable.style.display = 'block'
@@ -41,7 +74,7 @@ var fillModalTable = function (foods) {
 //after search the food in the API Display into the table the list also safe into array 
 var displayFoods = function (data) {
 
-    //need to put clear rutine before
+    cleanTableModal();
 
     for (var i = 0; i < data.hints.length; i++) {
 
@@ -66,6 +99,45 @@ var displayFoods = function (data) {
         fillModalTable(foods);
 
     }
+    $('#modal-line tr').mouseover(function (event) {
+        event.target.style.color = "White"
+        event.target.style.backgroundColor = "#e1f7cc";
+    })
+    $('#modal-line').mouseout(function (event) {
+        event.target.style.color = "#eb6424"
+        event.target.style.backgroundColor = "#ffffee";
+    })
+
+    $('#modal-line').one('click', function (event) {
+
+        if (apiList.length > 0) {
+            console.log(event.target);
+            console.log(event.target.getAttribute('id'));
+            var index = parseInt(event.target.getAttribute('id'));
+
+            var dateMoment = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+            $('#table-line').append('<tr><td>' + dateMoment + '</td>' + '<td>' + apiList[index].label + '</td>' + '<td>' + apiList[index].calories + '</td>' + '<td>' + apiList[index].carb + '</td>' + '<td>' +
+                apiList[index].protein + '</td>' + '<td>' + apiList[index].fat + '</td></tr>');
+
+            containerTable.style.display = 'block'
+            // save to localstorage
+            //foods.index = 0;
+            foods.date = dateMoment;
+            foods.label = apiList[index].label;
+            foods.calories = apiList[index].calories;
+            foods.protein = apiList[index].protein;
+            foods.carb = apiList[index].carb;
+            foods.fat = apiList[index].fat;
+
+            saveLocalStorage(foods)
+
+            modalTable.style.display = 'none'
+            modal.style.display = 'none'
+            foodSearchLog = "";
+            cleanTableModal();
+        }
+    });
 }
 //Search into the API the foods
 
@@ -92,10 +164,21 @@ var getFoodSearch = function () {
     }
 }
 
-
-
+//load from localstorage the foodlog
 var loadFoodLog = function () {
-    containerTable.style.display = 'none'
+
+    listLogFoods = JSON.parse(localStorage.getItem("foodLogFile"));
+    var lineFoods = "";
+    if (listLogFoods) {
+        containerTable.style.display = 'block'
+        for (var i = 0; i < listLogFoods.length; i++) {
+
+            $('#table-line').append('<tr><td>' + listLogFoods[i].date + '</td>' + '<td>' + listLogFoods[i].label + '</td>' + '<td>' + listLogFoods[i].calories + '</td>' + '<td>'
+                + listLogFoods[i].carb + '</td>' + '<td>' + listLogFoods[i].protein + '</td>' + '<td>' + listLogFoods[i].fat + '</td></tr>');
+        }
+    } else {
+        containerTable.style.display = 'none'
+    }
 }
 
 var clickSearchLog = function (event) {
