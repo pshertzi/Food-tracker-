@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,36 +10,94 @@
     <title>Lettuce Talk</title>
     <link rel="icon" href="./assets/images/Lettuce-Favicon.png">
 </head>
+
 <body>
     <nav class="navbar has-shadow">
         <!--Logo-->
         <div class="navbar-brand">
             <a class="navbar-item" href="./index.html">
-                <img src="./assets/images/LettuceTalk.png" id="logo" style="max-height: 250px" class="py-2 px-2" alt="Lettuce Talk pun">
+                <img src="./assets/images/LettuceTalk.png" id="logo" style="max-height: 250px" class="py-2 px-2"
+                    alt="Lettuce Talk pun">
             </a>
 
         </div>
 
         <div class="navbar-menu is-centered" id="navbar-links">
             <div class="navbar-end my-6 py-6">
+<<<<<<< .merge_file_cEsN71
                 <a class=" button is-ghost recipes-nutrition is-lowercase has-text-centered" id="recipes-nutrition" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href="./recipe.html">Recipe and nutrition</a>
                 <a class=" button is-ghost location is-lowercase has-text-centered" id="location" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href= "./location.html">Im Craving...</a>
                 
+=======
+                <a class=" navbar-item button is-primary is-success is-outlined recipes-nutrition is-lowercase has-text-centered"
+                    id="recipes-nutrition" href="./recipe.html">Recipe and nutrition</a>
+                <a class=" navbar-item button is-primary is-success is-outlined location is-lowercase has-text-centered"
+                    id="location" href="./location.html">Im Craving...</a>
+
+>>>>>>> .merge_file_Qm7K8j
             </div>
 
         </div>
 
-    
+
     </nav>
     <main>
-    
+        <!--Changes Add search container and button-->
+        <div class="section pt-3 pb-3 mx-1 my-1">
+            <div class="container has-text-centered">
+                <h1 class="is-size-3  is-centered" style="color: #79C230"">Food Search</h1>
+                <button class=" button is-dark is-rounded" id=" search-food">Search</button>
+            </div>
+        </div>
+
+        <!--Changes modal screen-->
+        <!--Modal-->
+        <div class="modal">
+            <div class="modal-background "></div>
+            <div class="modal-content has-text-light py-5 px-5" style="color: #79C230; background-color: #ffffee">
+                <h3 class="title mb-6">Food Search</h3>
+                <form id="form-search">
+                    <div class="field">
+                        <label class="label">Food:</label>
+                        <div class="control">
+                            <input type="text" class="input" placeholder="Name" id="text-search">
+                        </div>
+                        <div class="mt-6 has-text-centered">
+                            <button class="button is-dark" id="search-log">Search</button>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div id="modal-table">
+                    <table class="table is-bordered is-striped is-fullwidth is-hoverable">
+                        <tr class="th is-selected">
+                            <thead>
+                                <th>Food</th>
+                                <th>Calories</th>
+                                <th>Carbs</th>
+                                <th>Protein</th>
+                                <th>Fat</th>
+                        </tr>
+                        </thead>
+                        <!-- <tr id="modal-line">-->
+                        <tbody id="modal-line">
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <button class="modal-close is-large" aria-label="close">Model</button>
+            </div>
+        </div>
+
     </main>
     <footer class="has-text-centered footer" style="background-color: #ffffee; color: #79C230;">
         &copy; 2022 Katelyn Armstrong, Stephanie Ferguson, Leonel Morales, Paul Shertzinger
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./assets/log.js"></script>
+    <script src="./assets/js/foodlog.js"></script>
 </body>
+
 </html>
-    
