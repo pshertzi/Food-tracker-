@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,34 +10,77 @@
     <title>Lettuce Talk</title>
     <link rel="icon" href="./assets/images/Lettuce-Favicon.png">
 </head>
+
 <body>
     <nav class="navbar has-shadow">
         <!--Logo-->
         <div class="navbar-brand">
             <a class="navbar-item" href="./index.html">
-                <img src="./assets/images/LettuceTalk.png" id="logo" style="max-height: 250px" class="py-2 px-2" alt="Lettuce Talk pun">
+                <img src="./assets/images/LettuceTalk.png" id="logo" style="max-height: 250px" class="py-2 px-2"
+                    alt="Lettuce Talk pun">
             </a>
 
         </div>
 
         <div class="navbar-menu is-centered" id="navbar-links">
             <div class="navbar-end my-6 py-6">
-                <a class=" button is-ghost food-log is-lowercase has-text-centered" id="food-log" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href="./foodlog.html">Food Log</a>
-                <a class=" button is-ghost location is-lowercase has-text-centered" id="location" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href= "./location.html">Im Craving...</a>
-                
+                <a class=" navbar-item button is-primary is-success is-outlined food-log is-lowercase has-text-centered"
+                    id="food-log" href="./foodlog.html">Food Log</a>
+                <a class=" navbar-item button is-primary is-success is-outlined location is-lowercase has-text-centered"
+                    id="location" href="./location.html">Im Craving...</a>
+
             </div>
 
         </div>
 
-    
+
     </nav>
     <main>
-        
+
+        <!--Changes -->
+        <div class="section pt-3 pb-3 mx-1 my-1">
+            <div class="container has-text-centered">
+                <h1 class="is-size-3 " style="color: #79C230"">Recipe Search</h1>
+                 <button class=" button is-dark is-rounded " id="search-food">Search</button>
+            </div>
+        </div>
+        <!--Modal-->
+        <div class="modal">
+            <div class="modal-background "></div>
+            <div class="modal-content has-text-light py-5 px-5" style="color: #79C230; background-color: #ffffee">
+                <h3 class="title mb-6">Recipe Search</h3>
+                <form id="form-search">
+                    <div class="field">
+                        <label class="label">Food:</label>
+                        <div class="control">
+                            <input type="text" class="input" placeholder="Name" id="text-search">
+                        </div>
+                        <div class="mt-6 has-text-centered">
+                            <button class="button is-dark" id="search-log">Search</button>
+                        </div>
+
+                    </div>
+                </form>
+                <ul class="class-food" id="list-food">
+
+                </ul>
+
+                <button class="modal-close is-large" aria-label="close">
+                    Model
+                </button>
+            </div>
+        </div>
+
+
+        <section class="section" id="section-cards">
+
+        </section>
     </main>
     <footer class="has-text-centered footer" style="background-color: #ffffee; color: #79C230;">
         &copy; 2022 Katelyn Armstrong, Stephanie Ferguson, Leonel Morales, Paul Shertzinger
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./assets/recipe.js"></script>
+    <script src="./assets/js/recipe.js"></script>
 </body>
+
 </html>
