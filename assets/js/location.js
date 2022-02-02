@@ -31,7 +31,7 @@ var getKroger = function () {
             });
         })
         .catch(err => {
-            console.error(err);
+            alert("Unable to connect to API " + err);
         });
 }
 
@@ -47,7 +47,7 @@ var getPublix = function () {
             });
         })
         .catch(err => {
-            console.error(err);
+            alert("Unable to connect to API " + err);
         });
 }
 
@@ -64,7 +64,7 @@ var getWalmart = function () {
             });
         })
         .catch(err => {
-            console.error(err);
+            alert("Unable to connect to API " + err);
         });
 }
 

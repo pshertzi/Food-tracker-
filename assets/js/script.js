@@ -107,13 +107,13 @@ var randomRecipe = function () {
     fetch(apiUrl)
         .then(response => {
             response.json().then(function (data) {
-                console.log(data);
+                
                 displayRandomFood(data);
 
             });
         })
         .catch(err => {
-            console.error(err);
+            alert("Unable to connect to API EDAMAM " + err);
         });
 }
 

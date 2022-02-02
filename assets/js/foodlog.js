@@ -54,7 +54,7 @@ var cleanTableModal = function () {
     //$('#modal-line').remove();
     var linesTr = $('#modal-line > tr ');
     if (linesTr.length > 0) {
-        console.log(linesTr);
+       
         linesTr.remove();
 
 
@@ -111,8 +111,7 @@ var displayFoods = function (data) {
     $('#modal-line').one('click', function (event) {
 
         if (apiList.length > 0) {
-            console.log(event.target);
-            console.log(event.target.getAttribute('id'));
+
             var index = parseInt(event.target.getAttribute('id'));
 
             var dateMoment = moment().format('MMMM Do YYYY, h:mm:ss a');
