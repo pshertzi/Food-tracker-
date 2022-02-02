@@ -4,39 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Bing Microsoft API for Maps-->
-    <script type='text/javascript'>
-        var map;
-    
-        function GetMap() {
-            map = new Microsoft.Maps.Map('#myMap', {
-                credentials: 'ArrXVS9tBqxMsaC7kak_u6KXH9cBWlwJX7TwwSmscPhqu49ammtN20q2Vh45JkVQ',
-                center: new Microsoft.Maps.Location(47.60357, -122.32945)
-            }); 
-            var center = map.getCenter();
-    
-            //Create an infobox that will render in the center of the map.
-            var infobox = new Microsoft.Maps.Infobox(center, {
-                title: 'Map Center',
-                description: 'Seattle'
-            });
-    
-            //Assign the infobox to a map instance.
-            infobox.setMap(map);
-        }
-        </script>
-        <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/style.css">
-    
-
     <title>Lettuce Talk</title>
     <link rel="icon" href="./assets/images/Lettuce-Favicon.png">
+    <link rel="stylesheet" href="./assets/location.css">
 </head>
 <body>
-    <nav class="navbar has-shadow">
+    <nav class="navbar has-shadow has-background-warning-light">
         <!--Logo-->
         <div class="navbar-brand">
             <a class="navbar-item" href="./index.html">
@@ -56,17 +30,72 @@
 
     
     </nav>
-   
-    <div id="myMap" style="position:sticky;width:600px;height:400px; background-color: #ffffff;"></div>
-    <div class="section pt-3 pb-3 mx-1 my-1">
-      <div class="container">
-          <ul class="class-log" id="list-market">
-              <li></li>
-          </ul>
-      </div>
-    </div>
+
+    <!-- Bing Microsoft API for Maps-->
         
-    </main>
+        <main class="columns">
+
+            <aside id="sidebar" class="column is-2 aside hero box is-fullheight">
+
+                <div class="compose has-text-centered">
+    
+                    <h2>Ads</h2>
+    
+                </div>
+                <div class="compose has-text-centered is-vcentered is-fullheight">
+                    <p>Give us money!!</p>
+                </div>
+    
+            </aside>
+
+            <section class="column is-centered is-8 is-vcentered section is-small">
+                <script type='text/javascript'>
+                    var map;
+                
+                    function GetMap() {
+                        map = new Microsoft.Maps.Map('#myMap', {
+                            credentials: 'ArrXVS9tBqxMsaC7kak_u6KXH9cBWlwJX7TwwSmscPhqu49ammtN20q2Vh45JkVQ',
+                            center: new Microsoft.Maps.Location(47.60357, -122.32945)
+                        }); 
+                        var center = map.getCenter();
+                
+                        //Create an infobox that will render in the center of the map.
+                        var infobox = new Microsoft.Maps.Infobox(center, {
+                            title: 'Map Center',
+                            description: 'Seattle'
+                        });
+                
+                        //Assign the infobox to a map instance.
+                        infobox.setMap(map);
+                    }
+                </script>
+                <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+            
+                <div id="myMap" style="position:sticky;width:600px;height:400px; background-color: #ffffff;"></div>
+                <div class="section pt-3 pb-3 mx-1 my-1">
+                <div class="container">
+                    <ul class="class-log" id="list-market">
+                        <li></li>
+                    </ul>
+                </div>
+                </div>
+            </section>
+
+            <aside id="sidebar" class="column is-2 aside hero box is-fullheight">
+
+                <div class="compose has-text-centered">
+    
+                    <h2>Ads</h2>
+    
+                </div>
+                <div class="compose has-text-centered is-vcentered is-fullheight">
+                    <p>Give us money!!</p>
+                </div>
+    
+            </aside>
+        
+        
+        </main>
     <footer class="has-text-centered footer" style="background-color: #ffffee; color: #79C230;">
         &copy; 2022 Katelyn Armstrong, Stephanie Ferguson, Leonel Morales, Paul Shertzinger
     </footer>
