@@ -1,0 +1,24 @@
+* {
+    background-color: #FFFFEE;
+    color: #eb6424 ;
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar-end {
+        margin-left: .25 !important;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .navbar, .navbar-end, .navbar-menu, .navbar-start {
+        display: flex !important;
+    }
+
+}
+
+#sidebar {
+    background-image: url(./images/youradd.png) ;
+    background-position: center;
+    background-size: contain;
+}

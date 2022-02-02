@@ -1,0 +1,9 @@
+main {
+    background-color: #FFFFEE;
+}
+
+#sidebar {
+    background-image: url(./images/youradd.png) ;
+    background-position: center;
+    background-size: contain;
+}

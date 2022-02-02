@@ -1,24 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Tracker</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Lettuce Talk</title>
+    <link rel="icon" href="./assets/images/Lettuce-Favicon.png">
 </head>
+
 <body>
-    <header>
-        <h1 class="homepage" id="homepage">Food Tracker</h1>
-    </header>
-    <main>
-        <div class="container">
-        <button class="recipes-nutrition" id="recipes-nutrition">Recipes & Nutrition</button>
-        <button class="food-log" id="food-log">Food Log</button>
-        <button class="location" id="location">I'm Craving...</button>
+
+
+    <nav class="navbar has-shadow">
+
+        <!--Logo-->
+        <div class="navbar-brand">
+            <a class="navbar-item" href="./index.html">
+                <img src="./assets/images/LettuceTalk.png" id="logo" style="max-height: 250px" class="py-2 px-2"
+                    alt="Lettuce Talk pun">
+            </a>
+
         </div>
+
+        <div class="navbar-menu is-centered" id="navbar-links">
+            <div class="navbar-end my-6 py-6">
+                    <a class=" button is-ghost recipes-nutrition is-lowercase has-text-centered" id="recipes-nutrition" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href="./recipe.html">Recipe search</a>
+                    <a class=" button is-ghost food-log is-lowercase has-text-centered" id="food-log" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href="./foodlog.html">Nutrion Log</a>
+                    <a class=" button is-ghost location is-lowercase has-text-centered" id="location" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href= "./location.html">Find Store </a>
+
+            </div>
+
+        </div>
+    
+            
+    </nav>
+
+           
+        
+    <main class="columns">
+
+        <aside id="sidebar" class="column is-2 aside hero box is-fullheight">
+
+            <div class="compose has-text-centered">
+
+                <h2>Ads</h2>
+
+            </div>
+            <div class="compose has-text-centered is-vcentered is-fullheight">
+                <p>Give us money!!</p>
+            </div>
+
+        </aside>
+
+        <!--Changes Adding random recipe feature -->
+        <section class="column is-8 is-vcentered section is-small">
+                <div class="container">
+                    <div class="columns is-8 is-variable is-centered" >
+                        <div class="column is-5-tablet" >
+                            <!--mesage box-->
+                            <div class="message is-primary  px-6 mx-3" style="color: #79C230; background-color: #ffffee">
+                                <div class="message-header">
+                                    <p style="color:#ffffee; background-color: #00D1B2">Random Recipe </p>
+                                </div>
+                                <div class="message-body" id="random-meal"> 
+                                    <p id="desc-food">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed magni rerum minus quo iure
+                                        facere alias sunt harum esse laboriosam.</p>
+                                    <div class="has-text-centered">
+                                        <button class="button mt-5 is-primary is-medium" id="btn-details">Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Modal screen to display details-->
+                <div class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                    <header class="modal-card-head has-text-primary" style="background-color: #00D1B2">
+                        <p class="modal-card-title" style="color:#ffffee; background-color: #00D1B2">Recipe Details</p>
+                        <button class="delete" id="modal-close" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body" style="background-color: #ffffee">
+                    <div class="content">
+
+                    <div>  
+                    </section>
+                    <footer class="modal-card-foot"  style="background-color: #00D1B2">
+                        <button class="button is-danger is-centered" id="btn-close">Close</button>
+                    </footer>
+                    </div>
+                
+                </div>
+           
+
+        
+
+
+        
+            <h2 class="subtitle is-3 is-lowercase has-text-centered" style="color: #fa9500;">Our Purpose</h2>
+            <p class="has-text-centered">We are a brand that cares about helping each other build healthy 
+                habits around food. Today it can be hard to choose what to cook for dinner and know if you 
+                are making a healthy choice. We are here to offer you a place to find recipes with their 
+                nutrition facts, log meals with nutrition facts, and locate a store near you if you need 
+                an ingredient for your next favorite recipe. 
+            </p>
+
+
+            <br />
+             
+
+
+            <h2 class="subtitle is-3 is-lowercase has-text-centered" style="color: #fa9500;">Why Log?</h2>
+            <p class="has-text-centered">By tracking what you eat for a given amount of time, you will get a big picture
+                of your eating habits. The log can help you and your doctor understand how your eating habits affect
+                your parts of your daily life such as weight, energy level, or gastro issues. Once you know this, you
+                can make changes to your diet to improve your life. </p>
+        </section>
+
+
+        <aside id="sidebar" class="column is-2 aside hero box">
+
+            <div class="compose has-text-centered">
+
+                <h2>Ads</h2>
+
+            </div>
+            <div class="compose has-text-centered is-vcentered">
+                <p>Give us money!!</p>
+            </div>
+
+
+
+        </aside>
     </main>
-    <footer>
+
+    <br />
+    <br />
+    <footer class="has-text-centered footer" style="background-color: #ffffee; color: #79C230;">
         &copy; 2022 Katelyn Armstrong, Stephanie Ferguson, Leonel Morales, Paul Shertzinger
     </footer>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

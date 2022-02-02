@@ -3,8 +3,10 @@ This food tracker app allows an individual to track the nutrition of the foods t
 
 # Technologies: 
 javascript
+Bulma
 CSS
 HTML
 google API
+Jquery
 
 # Screenshot

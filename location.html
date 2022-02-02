@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Lettuce Talk</title>
+    <link rel="icon" href="./assets/images/Lettuce-Favicon.png">
+    <link rel="stylesheet" href="./assets/location.css">
+</head>
+<body>
+    <nav class="navbar has-shadow has-background-warning-light">
+        <!--Logo-->
+        <div class="navbar-brand">
+            <a class="navbar-item" href="./index.html">
+                <img src="./assets/images/LettuceTalk.png" id="logo" style="max-height: 250px" class="py-2 px-2" alt="Lettuce Talk pun">
+            </a>
+
+        </div>
+
+        <div class="navbar-menu is-centered" id="navbar-links">
+            <div class="navbar-end my-6 py-6">
+                <a class=" button is-ghost recipes-nutrition is-lowercase has-text-centered" id="recipes-nutrition" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href="./recipe.html">Recipe search</a>
+                <a class=" button is-ghost food-log is-lowercase has-text-centered" id="food-log" style="background-color: #ffffee; color: #79C230; text-decoration: underline;" href="./foodlog.html">Nutrion Log</a>
+                
+            </div>
+
+        </div>
+
+    
+    </nav>
+
+    <!-- Bing Microsoft API for Maps-->
+        
+        <main class="columns">
+
+            <aside id="sidebar" class="column is-2 aside hero box is-fullheight">
+
+                <div class="compose has-text-centered">
+    
+                    <h2>Ads</h2>
+    
+                </div>
+                <div class="compose has-text-centered is-vcentered is-fullheight">
+                    <p>Give us money!!</p>
+                </div>
+    
+            </aside>
+
+            <section class="column is-centered is-8 is-vcentered section is-small">
+                <script type='text/javascript'>
+                    var map;
+                
+                    function GetMap() {
+                        map = new Microsoft.Maps.Map('#myMap', {
+                            credentials: 'ArrXVS9tBqxMsaC7kak_u6KXH9cBWlwJX7TwwSmscPhqu49ammtN20q2Vh45JkVQ',
+                            center: new Microsoft.Maps.Location(36.144489564957375, -86.80336681574825)
+                        }); 
+                        var center = map.getCenter();
+                
+                        //Create an infobox that will render in the center of the map.
+                        var infobox = new Microsoft.Maps.Infobox(center, {
+                            title: 'Map Center',
+                            description: 'Vanderbilt'
+                        });
+                
+                        //Assign the infobox to a map instance.
+                        infobox.setMap(map);
+                    }
+                </script>
+                <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+            
+                <div id="myMap" style="position:sticky;width:600px;height:400px; background-color: #ffffff;"></div>
+                <div class="section pt-3 pb-3 mx-1 my-1">
+                <div class="container">
+                    <ul class="class-log" id="list-market">
+                        <li></li>
+                    </ul>
+                </div>
+                </div>
+            </section>
+
+            <aside id="sidebar" class="column is-2 aside hero box is-fullheight">
+
+                <div class="compose has-text-centered">
+    
+                    <h2>Ads</h2>
+    
+                </div>
+                <div class="compose has-text-centered is-vcentered is-fullheight">
+                    <p>Give us money!!</p>
+                </div>
+    
+            </aside>
+        
+        
+        </main>
+    <footer class="has-text-centered footer" style="background-color: #ffffee; color: #79C230;">
+        &copy; 2022 Katelyn Armstrong, Stephanie Ferguson, Leonel Morales, Paul Shertzinger
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <script src="./assets/js/location.js"></script>
+</body>
+</html>
