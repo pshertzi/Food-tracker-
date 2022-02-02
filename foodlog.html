@@ -44,6 +44,47 @@
             </div>
         </div>
 
+        <!--Changes modal screen-->
+        <!--Modal-->
+        <div class="modal">
+            <div class="modal-background "></div>
+            <div class="modal-content has-text-light py-5 px-5" style="color: #79C230; background-color: #ffffee">
+                <h3 class="title mb-6">Food Search</h3>
+                <form id="form-search">
+                    <div class="field">
+                        <label class="label">Food:</label>
+                        <div class="control">
+                            <input type="text" class="input" placeholder="Name" id="text-search">
+                        </div>
+                        <div class="mt-6 has-text-centered">
+                            <button class="button is-dark" id="search-log">Search</button>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div id="modal-table">
+                    <table class="table is-bordered is-striped is-fullwidth is-hoverable">
+                        <tr class="th is-selected">
+                            <thead>
+                                <th>Food</th>
+                                <th>Calories</th>
+                                <th>Carbs</th>
+                                <th>Protein</th>
+                                <th>Fat</th>
+                        </tr>
+                        </thead>
+                        <!-- <tr id="modal-line">-->
+                        <tbody id="modal-line">
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <button class="modal-close is-large" aria-label="close">Model</button>
+            </div>
+        </div>
+
     </main>
     <footer class="has-text-centered footer" style="background-color: #ffffee; color: #79C230;">
         &copy; 2022 Katelyn Armstrong, Stephanie Ferguson, Leonel Morales, Paul Shertzinger
