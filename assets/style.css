@@ -9,12 +9,8 @@
     background-size: contain;
 }
 
-/* MEDIA QUERY FOR TABLETS AND SMALLER */
-@media screen and (max-width: 768px) {
-    .navbar-end {
-        margin-left: .25 !important;
-    }
 
+<<<<<<< HEAD
 
 }
 
@@ -25,5 +21,7 @@
     }
 
 }
+=======
+>>>>>>> develop
 
 
