@@ -9,22 +9,6 @@
     background-size: contain;
 }
 
-/* MEDIA QUERY FOR TABLETS AND SMALLER */
-@media screen and (max-width: 768px) {
-    .navbar-end {
-        margin-left: .25 !important;
-    }
 
-   #navbar-links
-
-}
-
-/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
-@media screen and (max-width: 575px) {
-    .navbar, .navbar-end, .navbar-menu, .navbar-start {
-        display: flex !important;
-    }
-
-}
 
 
