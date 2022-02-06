@@ -3,7 +3,7 @@ var modalRecipe = document.querySelector('.modal');
 var btnRecipe = document.querySelector('#search-food')
 var closeRecipe = document.querySelector('.modal-close')
 
-//create the DOM elements using JQUERY for the card for each recipe
+//create the elements using JQUERY for the card for each recipe
 var createCards = function (hits, idx) {
 
     $('#section-cards').append('<br>')
@@ -12,7 +12,7 @@ var createCards = function (hits, idx) {
     $('#contCard' + idx).append('<div class="card is-fullwidth" id="localFull' + idx + '">');
     $('#localFull' + idx).append('<header class="card-header" id="localHeader' + idx + '">');
 
-    $('#localHeader' + idx).append('<p class="card-header-title" id="idtitle' + idx + '">' + hits.label + '</p>');
+    $('#localHeader' + idx).append('<p class="card-header-title has-background-dark has-text-white-bis" id="idtitle' + idx + '">' + hits.label + '</p>');
 
 
     $('#localFull' + idx).append('<div class="card-content" id="localHidden' + idx + '">');;
@@ -26,6 +26,7 @@ var createCards = function (hits, idx) {
 var displayFoods = function (data) {
 
     var listIng = "";
+    //previous searchs elimanate those elements
     if ($('#section-cards div').length > 0) {
         $('#section-cards div').remove();
         $('#section-cards br').remove()

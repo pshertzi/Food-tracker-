@@ -2,21 +2,23 @@ var error = document.querySelector('.modal-error')
 
 var displayMarket = function (data, location) {
 
-    $('#list-market').append('<div class = "message-body">');
-    
-    if (data) {
-        switch (location) {
-            case "Kroger": $('#list-market').append('<li>' + location + ' near to your location</li>');
-                break;
-            case "Publix": $('#list-market').append('<li>' + location + ' near to your location</li>');
-                break;
-            case "Walmart": $('#list-market').append('<li>' + location + ' near to your location</li>');
-                break;
-        }
-        $('#list-market').append('<div class = "message-body">');
-        for (var i = 0; i < data.resourceSets.length; i++) {
-            for (var j = 0; j < data.resourceSets[i].resources.length; j++) {
-                $('#list-market').append('<li>' + data.resourceSets[i].resources[j].Address.formattedAddress + '</li>');
+    if (data.resourceSets.length > 0) {
+        $('#container-market').append('<div class = "message" id="msg-market' + location + '">');
+        $('#msg-market' + location).append('<div class = "message-header" id="msg-header' +location + '">');
+        if (data) {
+            switch (location) {
+                case "Kroger": $('#msg-header' +location).append('<p>' + location + ' near to your location');
+                    break;
+                case "Publix": $('#msg-header' +location).append('<p>' + location + ' near to your location');
+                    break;
+                case "Walmart": $('#msg-header' +location).append('<p>' + location + ' near to your location');
+                    break;
+            }
+            $('#msg-market' + location).append('<div class = "message-body" id="body' +location + '"style="background-color: #ffffee">');
+            for (var i = 0; i < data.resourceSets.length; i++) {
+                for (var j = 0; j < data.resourceSets[i].resources.length; j++) {
+                    $('#body' +location).append('<li>' + data.resourceSets[i].resources[j].Address.formattedAddress + '</li>');
+                }
             }
         }
     }
@@ -27,20 +29,20 @@ var getKroger = function () {
     ;
     var apiUrl = "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=kroger&key=ArrXVS9tBqxMsaC7kak_u6KXH9cBWlwJX7TwwSmscPhqu49ammtN20q2Vh45JkVQ"
     fetch(apiUrl)
-    .then(function (response) {
-        if (response.ok) {
-            response.json().then(function (data) {
-                displayMarket(data, "Walmart");
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    displayMarket(data, "Kroger");
 
 
-            });
-        } else {
+                });
+            } else {
+                showError(error);
+            }
+        })
+        .catch(function (error) {
             showError(error);
-        }
-    })
-    .catch(function (error) {
-        showError(error);
-    });
+        });
 
 }
 
@@ -49,20 +51,20 @@ var getPublix = function () {
     ;
     var apiUrl = "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=publix&key=ArrXVS9tBqxMsaC7kak_u6KXH9cBWlwJX7TwwSmscPhqu49ammtN20q2Vh45JkVQ"
     fetch(apiUrl)
-    .then(function (response) {
-        if (response.ok) {
-            response.json().then(function (data) {
-                displayMarket(data, "Walmart");
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    displayMarket(data, "Publix");
 
 
-            });
-        } else {
+                });
+            } else {
+                showError(error);
+            }
+        })
+        .catch(function (error) {
             showError(error);
-        }
-    })
-    .catch(function (error) {
-        showError(error);
-    });
+        });
 
 }
 
