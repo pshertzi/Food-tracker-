@@ -27,8 +27,18 @@
 
         <div class="navbar-menu is-centered" id="nav-links">
             <div class="navbar-end my-6 py-6">
+<<<<<<< HEAD
                 <a class=" navbar-item button is-primary is-success is-outlined food-log is-lowercase has-text-centered" id="food-log"href="./foodlog.html"> nutrition Log</a>
                 <a class=" navbar-item button is-primary is-success is-outlined location is-lowercase has-text-centered" id="location"href= "./location.html">Search Stores...</a>
+=======
+                <a class=" button is-ghost food-log is-lowercase has-text-centered" id="food-log"
+                    style="background-color: #ffffee; color: #79C230; text-decoration: underline;"
+                    href="./foodlog.html">Nutrion Log</a>
+                <a class=" button is-ghost location is-lowercase has-text-centered" id="location"
+                    style="background-color: #ffffee; color: #79C230; text-decoration: underline;"
+                    href="./location.html">Find Store </a>
+
+>>>>>>> d4afe96454cf71282dc1a937b1d8282b9911c28f
             </div>
         </div>
     </nav>
@@ -82,21 +92,39 @@
                 </div>
             </div>
 
+            <!--Error Message-->
+            <div class="modal modal-error" id="error-message">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head has-text-centered" style="background-color:#7a7979">
+                        <p class="modal-card-title" style="color: #ffffee; background-color:#7a7979">Error</p>
+                        <button class="delete" id="modal-close" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body" style="background-color: #ffffee">
+                        <div class="content text-center">
+                            <p class="has-text-centered" id="error-msg">Error on API</p>
+                            <div>
+                    </section>
+                    <footer class="modal-card-foot" style="background-color: #7a7979">
+                        <button class="button is-danger" id="btn-close">Close</button>
+                    </footer>
+                </div>
 
-            <section class="section" id="section-cards" style="background-color: #ffffff;"></section>
+            </div>
+            <section class="section" id="section-cards" style="background-color: #ffffee;"></section>
         </section>
-            <aside id="sidebar" class="column is-2 aside hero box is-fullheight is-hidden-touch">
+        <aside id="sidebar" class="column is-2 aside hero box is-fullheight is-hidden-touch">
 
-                <div class="compose has-text-centered">
-    
-                    <h2>Ads</h2>
-    
-                </div>
-                <div class="compose has-text-centered is-vcentered is-fullheight">
-                    <p>Give us money!!</p>
-                </div>
-    
-            </aside>
+            <div class="compose has-text-centered">
+
+                <h2>Ads</h2>
+
+            </div>
+            <div class="compose has-text-centered is-vcentered is-fullheight">
+                <p>Give us money!!</p>
+            </div>
+
+        </aside>
     </main>
     <footer class="has-text-centered footer" style="background-color: #ffffee; color: #79C230;">
         &copy; 2022 Katelyn Armstrong, Stephanie Ferguson, Leonel Morales, Paul Shertzinger

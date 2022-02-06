@@ -1,12 +1,10 @@
-var modal =
-    document.querySelector('.modal');
+var modal = document.querySelector('.modal');
 
-var btnDetails =
-    document.querySelector('#btn-details')
-var close =
-    document.querySelector('#modal-close')
-var btnClose =
-    document.querySelector('#btn-close')
+var btnDetails = document.querySelector('#btn-details')
+var close =  document.querySelector('#modal-close')
+var btnClose = document.querySelector('#btn-close')
+ 
+var error = document.querySelector('.modal-error')
 
 //add data into details modal
 var displayIngredient = function (meals, modal) {
@@ -99,53 +97,66 @@ var displayRandomFood = function (data) {
     }
 }
 
+//show error
+var showError = function (error) {
+    $("#error-msg").append('<p>' + error)
+    $("#error-message").addClass("is-active");
+}
+
 
 //API to get a random recipe
 var randomRecipe = function () {
     var apiUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
-    fetch(apiUrl)
-        .then(response => {
+    fetch(apiUrl).then(function (response) {
+        if (response.ok) {
             response.json().then(function (data) {
-                console.log(data);
+                
                 displayRandomFood(data);
-
             });
-        })
-        .catch(err => {
-            console.error(err);
+        } else {
+            showError("Error to get data with API themealdb");
+        }
+    })
+        .catch(function (err) {
+
+            showError("Error to get data with API themealdb");
         });
 }
+
 
 randomRecipe();
 
 
 
-btnDetails.addEventListener('click',
-    function () {
+btnDetails.addEventListener('click', function () {
 
-        //modal.style.display = 'block'
-        $(".modal").addClass("is-active");
+        //$(".modal").addClass("is-active");
+        $(".class-info").addClass("is-active");
+        
     })
 
-close.addEventListener('click',
-    function () {
+close.addEventListener('click', function () {
         $(".modal").removeClass("is-active");
-        // modal.style.display = 'none'
+
     })
 
-btnClose.addEventListener('click',
-    function () {
+btnClose.addEventListener('click', function () {
         $(".modal").removeClass("is-active");
-        // modal.style.display = 'none'
+
     })
 
-window.addEventListener('click',
-    function (event) {
+window.addEventListener('click', function (event) {
         if (event.target.className ===
             'modal-background') {
-            //modal.style.display = 'none'
+
             $(".modal").removeClass("is-active");
         }
     })
 
+var closeError = function (event) {
+
+        $("#error-message").removeClass("is-active");
+    }
+    
+error.addEventListener("click", closeError);

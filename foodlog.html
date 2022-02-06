@@ -58,6 +58,7 @@
 
             <!--Changes modal screen-->
             <!--Modal-->
+
             <div class="modal">
                 <div class="modal-background "></div>
                 <div class="modal-content has-text-light py-5 px-5" style="color: #79C230; background-color: #ffffee">
@@ -74,16 +75,17 @@
 
                         </div>
                     </form>
+                    
 
-                    <div id="modal-table">
+                    <div id="modal-table" style="background-color:#4a4a4a">
                         <table class="table is-bordered is-striped is-fullwidth is-hoverable">
                             <tr class="th is-selected">
                                 <thead>
-                                    <th>Food</th>
-                                    <th>Calories</th>
-                                    <th>Carbs</th>
-                                    <th>Protein</th>
-                                    <th>Fat</th>
+                                    <th class="has-background-grey-dark has-text-white-bis">Food</th>
+                                    <th class="has-background-grey-dark has-text-white-bis">Calories</th>
+                                    <th class="has-background-grey-dark has-text-white-bis">Carbs</th>
+                                    <th class="has-background-grey-dark has-text-white-bis">Protein</th>
+                                    <th class="has-background-grey-dark has-text-white-bis">Fat</th>
                             </tr>
                             </thead>
                             <!-- <tr id="modal-line">-->
@@ -100,20 +102,39 @@
             <br>
             <div class="container-table">
                 <table class="table is-bordered is-striped is-fullwidth is-hoverable">
-                    <tr class="th ">
+                    <tr class="th has-background-dark" style="background-color:#4a4a4a">
                         <thead>
-                            <th>Date</th>
-                            <th>Food</th>
-                            <th>Calories</th>
-                            <th>Carbs</th>
-                            <th>Protein</th>
-                            <th>Fat</th>
+                            <th class="has-background-grey-dark has-text-white-bis">Date</th>
+                            <th class="has-background-grey-dark has-text-white-bis">Food</th>
+                            <th class="has-background-grey-dark has-text-white-bis">Calories</th>
+                            <th class="has-background-grey-dark has-text-white-bis">Carbs</th>
+                            <th class="has-background-grey-dark has-text-white-bis">Protein</th>
+                            <th class="has-background-grey-dark has-text-white-bis">Fat</th>
                     </tr>
                     </thead>
                     <!--<tr id="table-line">-->
                     <tbody id="table-line">
                     </tbody>
                 </table>
+            </div>
+            <!--Error Message-->
+            <div class="modal modal-error" id="error-message">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head has-text-centered" style="background-color:#7a7979">
+                        <p class="modal-card-title" style="color: #ffffee; background-color:#7a7979">Error</p>
+                        <button class="delete" id="modal-close" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body" style="background-color: #ffffee">
+                        <div class="content text-center">
+                            <p class="has-text-centered" id="error-msg">Error on API</p>
+                            <div>
+                    </section>
+                    <footer class="modal-card-foot" style="background-color: #7a7979">
+                        <button class="button is-danger" id="btn-close">Close</button>
+                    </footer>
+                </div>
+
             </div>
         </section>
         <aside id="sidebar" class="column is-2 aside hero box is-fullheight is-hidden-touch">
