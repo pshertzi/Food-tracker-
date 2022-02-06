@@ -12,7 +12,7 @@ var createCards = function (hits, idx) {
     $('#contCard' + idx).append('<div class="card is-fullwidth" id="localFull' + idx + '">');
     $('#localFull' + idx).append('<header class="card-header" id="localHeader' + idx + '">');
 
-    $('#localHeader' + idx).append('<p class="card-header-title has-background-dark has-text-white-bis" id="idtitle' + idx + '">' + hits.label + '</p>');
+    $('#localHeader' + idx).append('<p class="card-header-title has-background-grey-dark has-text-white-bis" id="idtitle' + idx + '">' + hits.label + '</p>');
 
 
     $('#localFull' + idx).append('<div class="card-content" id="localHidden' + idx + '">');;

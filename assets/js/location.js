@@ -17,7 +17,7 @@ var displayMarket = function (data, location) {
             $('#msg-market' + location).append('<div class = "message-body" id="body' +location + '"style="background-color: #ffffee">');
             for (var i = 0; i < data.resourceSets.length; i++) {
                 for (var j = 0; j < data.resourceSets[i].resources.length; j++) {
-                    $('#body' +location).append('<li>' + data.resourceSets[i].resources[j].Address.formattedAddress + '</li>');
+                    $('#body' +location).append('<li style="color: #fa9500">' + data.resourceSets[i].resources[j].Address.formattedAddress + '</li>');
                 }
             }
         }
