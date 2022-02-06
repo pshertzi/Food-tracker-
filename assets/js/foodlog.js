@@ -139,6 +139,13 @@ var displayFoods = function (data) {
         }
     });
 }
+
+//show error
+var showError = function (error) {
+    $("#error-msg").append('<p>' + error)
+    $("#error-message").addClass("is-active");
+}
+
 //Search into the API the foods
 
 var getFoodSearch = function () {
@@ -154,12 +161,12 @@ var getFoodSearch = function () {
                     displayFoods(data);
                 });
             } else {
-                alert("Error");
+                showError(error);
             }
         })
             .catch(function (error) {
                
-                alert("Unable to connect to API EDAMAM");
+                showError(error);
             });
     }
 }
@@ -206,4 +213,12 @@ closeModal.addEventListener('click', function () {
 //When click the search button on search
 $('#search-log').click(clickSearchLog);
 
+var closeError = function (event) {
+
+    $("#error-message").removeClass("is-active");
+}
+
+error.addEventListener("click", closeError);
+
 loadFoodLog();
+

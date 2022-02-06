@@ -116,6 +116,25 @@
                     </tbody>
                 </table>
             </div>
+            <!--Error Message-->
+            <div class="modal modal-error" id="error-message">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head has-text-centered" style="background-color:#7a7979">
+                        <p class="modal-card-title" style="color: #ffffee; background-color:#7a7979">Error</p>
+                        <button class="delete" id="modal-close" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body" style="background-color: #ffffee">
+                        <div class="content text-center">
+                            <p class="has-text-centered" id="error-msg">Error on API</p>
+                            <div>
+                    </section>
+                    <footer class="modal-card-foot" style="background-color: #7a7979">
+                        <button class="button is-danger" id="btn-close">Close</button>
+                    </footer>
+                </div>
+
+            </div>
         </section>
         <aside id="sidebar" class="column is-2 aside hero box is-fullheight is-hidden-touch">
 
