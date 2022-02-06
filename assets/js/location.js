@@ -1,4 +1,4 @@
-var error = document.querySelector('.modal-error')
+var errorModal = document.querySelector('.modal-error')
 
 var displayMarket = function (data, location) {
 
@@ -83,10 +83,9 @@ var getWalmart = function () {
                 response.json().then(function (data) {
                     displayMarket(data, "Walmart");
 
-
                 });
             } else {
-                showError(error);
+                showError("Error on API BING Map");
             }
         })
         .catch(function (error) {
@@ -100,7 +99,7 @@ var closeError = function (event) {
     $("#error-message").removeClass("is-active");
 }
 
-error.addEventListener("click", closeError);
+errorModal.addEventListener("click", closeError);
 
 $('#list-market').empty();
 getKroger();

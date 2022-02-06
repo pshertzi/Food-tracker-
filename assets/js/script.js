@@ -115,12 +115,12 @@ var randomRecipe = function () {
                 displayRandomFood(data);
             });
         } else {
-            showError(error);
+            showError("Error to get data with API themealdb");
         }
     })
-        .catch(function (error) {
+        .catch(function (err) {
 
-            showError(error);
+            showError("Error to get data with API themealdb");
         });
 }
 
@@ -131,7 +131,9 @@ randomRecipe();
 
 btnDetails.addEventListener('click', function () {
 
-        $(".modal").addClass("is-active");
+        //$(".modal").addClass("is-active");
+        $(".class-info").addClass("is-active");
+        
     })
 
 close.addEventListener('click', function () {

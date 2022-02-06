@@ -161,7 +161,7 @@ var getFoodSearch = function () {
                     displayFoods(data);
                 });
             } else {
-                showError(error);
+                showError("Error to get data in API edamam");
             }
         })
             .catch(function (error) {
