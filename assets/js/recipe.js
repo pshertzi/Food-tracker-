@@ -2,6 +2,7 @@
 var modalRecipe = document.querySelector('.modal');
 var btnRecipe = document.querySelector('#search-food')
 var closeRecipe = document.querySelector('.modal-close')
+var error = document.querySelector('.modal-error')
 
 //create the elements using JQUERY for the card for each recipe
 var createCards = function (hits, idx) {
@@ -40,6 +41,11 @@ var displayFoods = function (data) {
     }
 
 }
+//show error
+var showError = function (error) {
+    $("#error-msg").append('<p>' + error)
+    $("#error-message").addClass("is-active");
+}
 
 //Call the API for the recipes
 var getRecipe = function () {
@@ -55,12 +61,12 @@ var getRecipe = function () {
                     displayFoods(data);
                 });
             } else {
-                alert("Error");
+                showError(error);
             }
         })
             .catch(function (error) {
 
-                alert("Unable to connect");
+                showError(error);
             });
     }
 }
@@ -91,3 +97,10 @@ window.addEventListener('click', function (event) {
         modalRecipe.style.display = 'none'
     }
 })
+
+var closeError = function (event) {
+
+    $("#error-message").removeClass("is-active");
+}
+
+error.addEventListener("click", closeError);

@@ -31,6 +31,8 @@ var modalTable = document.querySelector('#modal-table');
 // table
 var containerTable = document.querySelector('.container-table');
 
+var error = document.querySelector('.modal-error')
+
 //safe data into localstorage
 var saveLocalStorage = function (foods) {
 
@@ -54,9 +56,8 @@ var cleanTableModal = function () {
     //$('#modal-line').remove();
     var linesTr = $('#modal-line > tr ');
     if (linesTr.length > 0) {
-        console.log(linesTr);
-        linesTr.remove();
 
+        linesTr.remove();
 
     }
     if (apiList.length > 0) {
@@ -111,8 +112,7 @@ var displayFoods = function (data) {
     $('#modal-line').one('click', function (event) {
 
         if (apiList.length > 0) {
-            console.log(event.target);
-            console.log(event.target.getAttribute('id'));
+
             var index = parseInt(event.target.getAttribute('id'));
 
             var dateMoment = moment().format('MMMM Do YYYY, h:mm:ss a');
